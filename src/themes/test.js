@@ -6,27 +6,28 @@ import Auctions from "../components/Auctions/AuctionsOne";
 import TopSeller from "../components/TopSeller/TopSellerOne";
 import Collections from "../components/Collections/Collections";
 import Explore from "../components/Explore/ExploreOne";
-import Work from "../components/Work/Work";
-import Footer from "../components/Footer/Footer";
-import ModalSearch from "../components/Modal/ModalSearch";
-import ModalMenu from "../components/Modal/ModalMenu";
-import Scrollup from "../components/Scrollup/Scrollup";
+import LifeCycleSample from "../components/Sample/LifeCycleSample";
+
+function getRandomColor() {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}
 
 class ThemeOne extends Component {
+  state = {
+    color: "#00000",
+  };
+
+  handleClick = () => {
+    this.setState({
+      color: getRandomColor(),
+    });
+  };
+
   render() {
     return (
       <div className="main">
-        <Header />
-        <Hero />
-        <Auctions />
-        <TopSeller />
-        <Collections />
-        <Explore />
-        <Work />
-        <Footer />
-        <ModalSearch />
-        <ModalMenu />
-        <Scrollup />
+        <button onClick={this.handleClick}>랜덤 색상</button>
+        <LifeCycleSample color={this.state.color} />
       </div>
     );
   }

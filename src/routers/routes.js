@@ -20,6 +20,7 @@ import Create from "../themes/create";
 import Login from "../themes/login";
 import Signup from "../themes/signup";
 import Contact from "../themes/contact";
+import Test from "../themes/test";
 
 class MyRouts extends React.Component {
   render() {
@@ -45,6 +46,7 @@ class MyRouts extends React.Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/test" component={Test} />
           </Switch>
         </Router>
       </div>
